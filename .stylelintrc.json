@@ -1,0 +1,20 @@
+{
+  "extends": ["@hipo/stylelint-config-base"],
+  "plugins": [
+    "stylelint-order",
+    "stylelint-scss",
+    "stylelint-no-unsupported-browser-features"
+  ],
+  "rules": {
+    "value-list-comma-newline-after": null,
+    "font-family-name-quotes": null,
+    "scss/at-mixin-argumentless-call-parentheses": null,
+    "selector-class-pattern": null,
+    "no-descending-specificity": null,
+    "color-hex-case": null,
+    "color-no-hex": null,
+    "scss/dollar-variable-empty-line-before": null,
+    "scss/operator-no-newline-after": null,
+    "declaration-colon-newline-after": null
+  }
+}

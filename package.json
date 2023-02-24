@@ -1,0 +1,51 @@
+{
+  "name": "@perawallet/onramp",
+  "version": "1.0.0",
+  "description": "Pera Onramp lets users top up in just a few clicks, offering the best rates for ALGO and stablecoins. Easily integrate it into your dApp with JavaScript SDK.",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "./node_modules/.bin/rollup -c -w",
+    "build": "npm run eslint && ./node_modules/.bin/rollup -c",
+    "eslint": "./node_modules/.bin/eslint --ext .js,.ts src/",
+    "prettify": "prettier --config ./.prettierrc.js --write \"src/**/*.ts\""
+  },
+  "author": "Pera Wallet",
+  "license": "ISC",
+  "devDependencies": {
+    "@hipo/eslint-config-base": "4.1.1",
+    "@hipo/eslint-config-typescript": "1.1.0",
+    "@hipo/stylelint-config-base": "3.2.0",
+    "@rollup/plugin-commonjs": "24.0.0",
+    "@rollup/plugin-image": "3.0.1",
+    "@rollup/plugin-json": "6.0.0",
+    "@rollup/plugin-node-resolve": "15.0.1",
+    "@typescript-eslint/eslint-plugin": "5.17.0",
+    "@typescript-eslint/parser": "5.17.0",
+    "eslint": "8.12.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "^2.27.5",
+    "node-sass": "7.0.3",
+    "postcss": "8.4.20",
+    "prettier": "2.6.1",
+    "rollup": "2.78.0",
+    "rollup-plugin-eslint": "7.0.0",
+    "rollup-plugin-postcss": "4.0.2",
+    "rollup-plugin-terser": "7.0.2",
+    "rollup-plugin-typescript2": "0.34.1",
+    "sass": "1.49.11",
+    "stylelint": "14.16.1",
+    "stylelint-no-unsupported-browser-features": "6.0.1",
+    "stylelint-order": "5.0.0",
+    "stylelint-scss": "4.3.0",
+    "typescript": "4.6.3"
+  },
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perawallet/onramp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/perawallet/onramp/issues"
+  },
+  "homepage": "https://github.com/perawallet/onramp#readme"
+}
