@@ -11,8 +11,7 @@ export type PeraOnrampTeller =
   | {type: "ADD_FUNDS_REQUEST"}
   | {type: "ADD_FUNDS_COMPLETED"}
   | {type: "CONTINUE_CLICKED_AFTER_ADD_FUNDS_COMPLETED"}
-  | {type: "ADD_FUNDS_FAILED"}
-  | {type: "MESSAGE_RECEIVED"};
+  | {type: "ADD_FUNDS_FAILED"};
 
 const appTellerManager = new Teller<PeraOnrampTeller>({
   channel: "pera-onramp"

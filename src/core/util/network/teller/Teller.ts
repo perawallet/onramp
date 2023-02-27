@@ -1,7 +1,4 @@
-import appTellerManager, {PeraOnrampTeller} from "./appTellerManager";
-
-const TELLER_MESSAGE_TIMEOUT = 300;
-const SEND_MESSAGE_TRY_MAX_COUNT = 50;
+const TELLER_MESSAGE_TIMEOUT = 1000;
 
 class Teller<Message> {
   private channel: string;
@@ -16,6 +13,7 @@ class Teller<Message> {
         - Call tellerManager.sendMessage({message, targetWindow, origin}) to send a message to the other tab/window/iframe.
         - Call tellerManager.setupListener({onReceiveMessage}) to listen for messages from the other tab/window/iframe.
         - Call tellerManager.close(); to close the active listener.
+
       Details on: https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
   */
   constructor(options: TellerOptions) {
@@ -28,6 +26,9 @@ class Teller<Message> {
   }: {
     onReceiveMessage: (event: MessageEvent<TellerMessage<Message>>) => void;
   }) {
+    // Close the existing listener if it exists
+    this.close();
+
     this.listener = (event: MessageEvent<TellerMessage<Message>>) => {
       if (typeof event.data === "object") {
         try {
@@ -50,14 +51,7 @@ class Teller<Message> {
     origin,
     timeout = TELLER_MESSAGE_TIMEOUT
   }: TellerMessageOptions<Message>) {
-    let count = 0;
-
-    const sendMessageInterval = setInterval(() => {
-      count += 1;
-
-      if (count >= SEND_MESSAGE_TRY_MAX_COUNT) {
-        clearInterval(sendMessageInterval);
-      }
+    setTimeout(() => {
       const tellerMessage = {
         channel: this.channel,
         message
@@ -68,14 +62,6 @@ class Teller<Message> {
         targetOrigin: origin || "*"
       });
     }, timeout);
-
-    appTellerManager.setupListener({
-      onReceiveMessage: (messageEvent: MessageEvent<TellerMessage<PeraOnrampTeller>>) => {
-        if (messageEvent.data.message.type === "MESSAGE_RECEIVED") {
-          clearInterval(sendMessageInterval);
-        }
-      }
-    });
   }
 
   public close() {

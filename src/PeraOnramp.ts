@@ -40,13 +40,6 @@ class PeraOnramp {
         if (message.type === "CONTINUE_CLICKED_AFTER_ADD_FUNDS_COMPLETED") {
           this.messageResolve("ADDING_FUNDS_COMPLETED");
         }
-
-        appTellerManager.sendMessage({
-          message: {
-            type: "MESSAGE_RECEIVED"
-          },
-          targetWindow: messageEvent!.source!
-        });
       }
     });
   }
@@ -81,13 +74,6 @@ class PeraOnramp {
     appTellerManager.setupListener({
       onReceiveMessage: (messageEvent) => {
         const {message} = messageEvent.data;
-
-        appTellerManager.sendMessage({
-          message: {
-            type: "MESSAGE_RECEIVED"
-          },
-          targetWindow: messageEvent!.source!
-        });
 
         if (message.type === "OPT_IN_REQUEST" && callbacks.OPT_IN_REQUEST) {
           // eslint-disable-next-line new-cap
