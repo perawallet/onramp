@@ -1,3 +1,4 @@
+import PeraOnrampError from "../../../core/util/PeraOnrampError";
 import PeraOnrampModal from "../PeraOnrampModal";
 import {
   PERA_ONRAMP_MODAL_ATTRIBUTES,
@@ -47,12 +48,14 @@ function appendPeraOnrampModalIfNotExists({
   accountAddress,
   availableAssets,
   optInEnabled,
-  platform
+  platform,
+  messageReject
 }: {
   accountAddress: PeraOnrampModalAttributes["ACCOUNT_ADDRESS"];
   availableAssets: PeraOnrampModalAttributes["AVAILABLE_ASSETS"];
   optInEnabled: PeraOnrampModalAttributes["OPT_IN_ENABLED"];
   platform: PeraOnrampModalAttributes["PLATFORM"];
+  messageReject: (reason: Error) => void;
 }) {
   if (
     !document.body.contains(
@@ -80,6 +83,13 @@ function appendPeraOnrampModalIfNotExists({
         )
       ) {
         peraOnrampModalWrapper.remove();
+
+        messageReject(
+          new PeraOnrampError(
+            {type: "MODAL_CLOSED_BY_USER", detail: "Modal closed by user"},
+            "Modal closed by user"
+          )
+        );
       }
     });
     peraOnrampModalWrapper.appendChild(peraOnrampModalElement);
