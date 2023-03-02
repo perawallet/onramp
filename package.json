@@ -1,6 +1,6 @@
 {
   "name": "@perawallet/onramp",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Pera Onramp lets users top up in just a few clicks, offering the best rates for ALGO and stablecoins. Easily integrate it into your dApp with JavaScript SDK.",
   "main": "dist/index.js",
   "scripts": {
