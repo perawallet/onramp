@@ -24,4 +24,4 @@ export const PERA_ONRAMP_MODAL_CLASSNAMES = {
   }
 };
 
-export const IFRAME_BASE_URL = "https://onramp-staging.perawallet.app/widget";
+export const IFRAME_BASE_URL = "https://onramp.perawallet.app/widget";
