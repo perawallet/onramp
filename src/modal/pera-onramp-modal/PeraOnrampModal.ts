@@ -2,8 +2,9 @@ import closeButtonIcon from "../../asset/icons/close.svg";
 import closeButtonIconDark from "../../asset/icons/close--dark.svg";
 
 import {hasWindowPeraWalletOrigin, setIframeSrc} from "./util/peraOnrampModalUtils";
-import PERA_ONRAMP_MODAL_ATTRIBUTES, {
+import {
   IFRAME_BASE_URL,
+  PERA_ONRAMP_MODAL_ATTRIBUTES,
   PERA_ONRAMP_MODAL_CLASSNAMES
 } from "./util/peraOnrampModalConstants";
 import styles from "./_pera-onramp-modal.scss";

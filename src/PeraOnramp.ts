@@ -49,7 +49,8 @@ class PeraOnramp {
       accountAddress,
       availableAssets: this.availableAssets!.join(","),
       optInEnabled: this.optInEnabled!.toString(),
-      platform: this.platform!
+      platform: this.platform!,
+      messageReject: this.messageReject
     });
 
     const peraOnrampModalCloseButton = document
