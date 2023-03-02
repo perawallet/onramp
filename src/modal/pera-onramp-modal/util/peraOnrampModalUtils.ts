@@ -78,9 +78,11 @@ function appendPeraOnrampModalIfNotExists({
     document.addEventListener("click", (event) => {
       if (
         event.target !==
-        peraOnrampModalElement.shadowRoot?.querySelector(
-          PERA_ONRAMP_MODAL_CLASSNAMES.PERA_ONRAMP_MODAL.QUERY_SELECTOR
-        )
+          peraOnrampModalElement.shadowRoot?.querySelector(
+            PERA_ONRAMP_MODAL_CLASSNAMES.PERA_ONRAMP_MODAL_IFRAME.QUERY_SELECTOR
+          ) &&
+        (event.target === document.querySelector(".pera-onramp-modal-wrapper") ||
+          event.target === document.querySelector("pera-onramp-modal"))
       ) {
         peraOnrampModalWrapper.remove();
 
