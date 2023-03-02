@@ -1,5 +1,8 @@
 import PeraOnrampModal from "../PeraOnrampModal";
-import PERA_ONRAMP_MODAL_ATTRIBUTES from "./peraOnrampModalConstants";
+import {
+  PERA_ONRAMP_MODAL_ATTRIBUTES,
+  PERA_ONRAMP_MODAL_CLASSNAMES
+} from "./peraOnrampModalConstants";
 
 function setIframeSrc({
   baseUrl,
@@ -69,6 +72,16 @@ function appendPeraOnrampModalIfNotExists({
     peraOnrampModalElement.setAttribute("opt-in-enabled", optInEnabled);
     peraOnrampModalElement.setAttribute("platform", platform);
 
+    document.addEventListener("click", (event) => {
+      if (
+        event.target !==
+        peraOnrampModalElement.shadowRoot?.querySelector(
+          PERA_ONRAMP_MODAL_CLASSNAMES.PERA_ONRAMP_MODAL.QUERY_SELECTOR
+        )
+      ) {
+        peraOnrampModalWrapper.remove();
+      }
+    });
     peraOnrampModalWrapper.appendChild(peraOnrampModalElement);
     document.body.appendChild(peraOnrampModalWrapper);
   }

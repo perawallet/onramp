@@ -2,7 +2,7 @@
 
 .pera-onramp-modal {
   position: relative;
-  top: 50%;
+  top: 0;
   left: 50%;
 
   width: 706px;
@@ -12,7 +12,7 @@
 
   background-color: #ffffff;
 
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 80px);
 
   animation: 0.5s PeraOnrampModalSlideIn ease-out;
 
@@ -107,13 +107,13 @@
   0% {
     opacity: 0;
 
-    transform: translate(-50%, calc(-50% + 24px));
+    transform: translate(-50%, calc(104px));
   }
 
   100% {
     opacity: 1;
 
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 80px);
   }
 }
 

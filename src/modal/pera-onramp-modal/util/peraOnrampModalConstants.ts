@@ -1,4 +1,4 @@
-const PERA_ONRAMP_MODAL_ATTRIBUTES = {
+export const PERA_ONRAMP_MODAL_ATTRIBUTES = {
   ADDRESS: "account-address",
   AVAILABLE_ASSETS: "available-assets",
   PLATFORM: "platform",
@@ -24,6 +24,4 @@ export const PERA_ONRAMP_MODAL_CLASSNAMES = {
   }
 };
 
-export const IFRAME_BASE_URL = "https://onramp.perawallet.app/widget";
-
-export default PERA_ONRAMP_MODAL_ATTRIBUTES;
+export const IFRAME_BASE_URL = "https://onramp-staging.perawallet.app/widget";
