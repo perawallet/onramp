@@ -9,7 +9,7 @@
   z-index: 999999;
 
   width: 100vw;
-  min-height: 100vh;
+  min-height: calc(100 * var(--vh));
 
   background-color: rgba(0, 0, 0, 0.7);
 }
