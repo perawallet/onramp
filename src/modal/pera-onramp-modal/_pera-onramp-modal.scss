@@ -26,8 +26,6 @@
   height: 100%;
 
   border: none;
-
-  border: none;
   border-radius: inherit;
 
   animation: 0.7s PeraOnrampIframeAnimation ease-in-out;
@@ -45,8 +43,6 @@
 
   width: 40px;
   height: 40px;
-
-  padding: 8px;
 
   padding: 8px;
 
@@ -74,6 +70,13 @@
     transform: unset;
 
     animation: 0.5s PeraOnrampModalMobileSlideIn ease-out;
+  }
+
+  .pera-onramp-modal__onramp-iframe {
+    height: calc(100% - 40px);
+
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   .pera-onramp-modal__close-button {
