@@ -5,12 +5,12 @@
   top: 0;
   left: 50%;
 
-  width: 706px;
+  width: 838px;
   height: 703px;
 
   border-radius: 24px;
 
-  background-color: #ffffff;
+  background-color: transparent;
 
   transform: translate(-50%, 80px);
 
@@ -26,8 +26,6 @@
   height: 100%;
 
   border: none;
-
-  border: none;
   border-radius: inherit;
 
   animation: 0.7s PeraOnrampIframeAnimation ease-in-out;
@@ -36,7 +34,7 @@
 .pera-onramp-modal__close-button {
   position: absolute;
   top: -52px;
-  right: -52px;
+  right: 14px;
 
   display: flex;
   align-items: center;
@@ -45,8 +43,6 @@
 
   width: 40px;
   height: 40px;
-
-  padding: 8px;
 
   padding: 8px;
 
@@ -74,6 +70,13 @@
     transform: unset;
 
     animation: 0.5s PeraOnrampModalMobileSlideIn ease-out;
+  }
+
+  .pera-onramp-modal__onramp-iframe {
+    height: calc(100% - 40px);
+
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   .pera-onramp-modal__close-button {
@@ -128,12 +131,5 @@
     top: 40px;
 
     opacity: 1;
-  }
-}
-
-@include for-small-screens {
-  .pera-onramp-modal {
-    width: 100%;
-    height: 100%;
   }
 }

@@ -1,3 +1,5 @@
+@import "../../core/ui/style/media-queries";
+
 .pera-onramp-modal-wrapper {
   position: fixed;
   top: 0;
@@ -5,10 +7,17 @@
   left: 0;
   bottom: 0;
   z-index: 999999;
-  overflow-y: auto;
 
   width: 100vw;
-  min-height: 100vh;
+  min-height: calc(100 * var(--vh));
 
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+@include for-small-screens {
+  .pera-onramp-modal-wrapper {
+    overflow-y: hidden;
+
+    min-height: 100%;
+  }
 }
