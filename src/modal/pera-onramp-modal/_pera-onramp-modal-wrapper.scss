@@ -11,6 +11,8 @@
   width: 100vw;
   min-height: calc(100 * var(--vh));
 
+  overflow-y: auto;
+
   background-color: rgba(0, 0, 0, 0.7);
 }
 
